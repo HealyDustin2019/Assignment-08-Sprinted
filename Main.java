@@ -10,15 +10,13 @@ public class Main{
         }
     public static void calc(int devs, int weeks){
         double timereq = 1590;
-        int workweek = 30;
-        double fin = (timereq/devs)/(workweek*weeks)*100;
-        System.out.printf("With %d devs working a %d week sprint, for %d hrs/wk, we would be at %.0f%% of capacity.%n",devs,weeks,workweek,fin);
-        workweek = 35;
-        fin = (timereq/devs)/(workweek*weeks)*100;
-        System.out.printf("With %d devs working a %d week sprint, for %d hrs/wk, we would be at %.0f%% of capacity.%n",devs,weeks,workweek,fin);
-        workweek = 40;
-        fin = (timereq/devs)/(workweek*weeks)*100;
-        System.out.printf("With %d devs working a %d week sprint, for %d hrs/wk, we would be at %.0f%% of capacity.%n",devs,weeks,workweek,fin);
+        int workweek = 25;
+        double fin;
+        for(int i = 0; i < 3;i++){
+            workweek += 5;
+            fin = (timereq/devs)/(workweek*weeks)*100;
+            System.out.printf("With %d devs working a %d week sprint, for %d hrs/wk, we would be at %.0f%% of capacity.%n",devs,weeks,workweek,fin);
+        }
     }
 }
 /*      Used to find total hours in scenario.(1590)
